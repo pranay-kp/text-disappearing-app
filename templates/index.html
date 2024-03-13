@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        textarea {
+        font-size: 16px;
+        }
+    </style>
+
+</head>
+<body>
+ <textarea id="myTextarea" rows="4" cols="50">
+        Enter your text here... Text Box Size can be adjusted.
+ </textarea>
+
+<script>
+        var textarea = document.getElementById('myTextarea');
+        var typingTimer;
+
+        textarea.addEventListener('keydown', function() {
+            clearTimeout(typingTimer); // Clear the previous timer
+            typingTimer = setTimeout(clearText, 10000); // Set a new timer for 10 seconds
+        });
+
+        function clearText() {
+            textarea.value = ''; // Clear the textarea content
+        }
+    </script>
+</body>
+</html>
